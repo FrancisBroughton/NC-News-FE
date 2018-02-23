@@ -26,3 +26,4 @@ export function fetchAllArticles(data){
       })
   }
 }
+
