@@ -19,21 +19,21 @@ describe('arcticles reducer tests', () => {
       expect(newState.articles).to.equal(prevState);
     });
     it('uses the initial state if no prevState is passed', () => {
-      const action = { type: "fetchArticleRequest" };
+      const action = { type: "fetchAllArticleRequest" };
       const newState = articlesReducer(undefined, action);
       expect(newState.articles).to.equal(initialState);
     });
 
-    it('handles fetchArticlesRequest', () => {
-      const action = fetchArticlesRequest();
+    it('handles fetchAllArticlesRequest', () => {
+      const action = fetchAllArticlesRequest();
       const newState = articlesReducer(prevState, action);
       expect(newState.articles.loading).to.eql(true);
       expect(newState.articles.error).to.eql(null);
       expect(newState.articles.payload).to.eql([]);
     });
-    it('handles fetchArticlesSuccess', () => {
+    it('handles fetchAllArticlesSuccess', () => {
       const data = "hello";
-      const action = fetchArticlesSuccess(data);
+      const action = fetchAllArticlesSuccess(data);
       const newState = articlesReducer(prevState, action);
       expect(newState.articles.payload).to.be.equal("hello");
       expect(newState.articles.error).to.be.equal(null);
@@ -41,7 +41,7 @@ describe('arcticles reducer tests', () => {
     });
     it('should return the correct action for fetchArticlesFailure', () => {
       const error = 'error';
-      const action = fetchArticlesFailure(error);
+      const action = fetchAllArticlesFailure(error);
       const newState = articlesReducer(prevState, action);
       expect(newState.articles.error).to.be.equal('error')
       expect(newState.articles.loading).to.be.equal(false)
