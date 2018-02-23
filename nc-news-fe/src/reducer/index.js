@@ -5,5 +5,7 @@ import articles from './articles';
 // import users from './users';
 const reducer = combineReducers ({
   articles: articles
-})
+});
+
+export default reducer;
  
