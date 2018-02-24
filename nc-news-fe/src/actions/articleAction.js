@@ -1,4 +1,4 @@
-import axio from 'axios';
+import axios from 'axios';
 import * as types from '../types';
  
 export const fetchAllArticlesRequest= ()=>  ({
