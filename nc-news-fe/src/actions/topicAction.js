@@ -5,14 +5,14 @@ export const fetchTopicsRequest = () => ({
   type: types.FETCH_TOPICS_REQUEST
 });
 
-export const fetchTopicsSuccess = () => ({
+export const fetchTopicsSuccess = (data) => ({
   type: types.FETCH_TOPICS_SUCCESS,
   payload: data
 });
 
-export const fetchTopicsFailure = () => ({
+export const fetchTopicsFailure = (error) => ({
   type: types.FETCH_TOPICS_FAILURE,
-  payload: error
+  error: error
 })
 
 export function fetchAllTopics(data) {
