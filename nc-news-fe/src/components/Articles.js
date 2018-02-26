@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAllArticles } from '../actions/articleAction'
   
-  class Articles extends Component {
-
+class Articles extends Component {
   constructor(props) {
     super(props)
 }
 
 componentDidMount() {
-    this.props.fetchAllArticles()
+  this.props.fetchAllArticles()
 }
 
 render() {
