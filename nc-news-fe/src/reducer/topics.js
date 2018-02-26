@@ -6,7 +6,7 @@ export const initialState ={
   payload: []
 };
 
-export default (prevState = initalState, action) => {
+export default (prevState = initialState, action) => {
   switch (action.type) {
 
     case types.FETCH_TOPICS_REQUEST:
@@ -17,7 +17,7 @@ export default (prevState = initalState, action) => {
     });
     
     case types.FETCH_TOPICS_SUCCESS:
-      return Object.assign ({}, prevstate, {
+      return Object.assign ({}, prevState, {
         loading: !prevState.loading,
         error: null,
         payload: action.payload
