@@ -17,14 +17,14 @@ export const fetchSingleArticleFailure = (error) => ({
 })
 
 
-export function fetchArticlesByArticlesId(id){
+export function fetchSingleArticle(id){
   return function (dispatch){
       axios.get(`https://northcoders-news-api.herokuapp.com/api/articles/${id}`)
       .then(res => {
-          dispatch(fetchArticlesSuccess(res.data))
+          dispatch(fetchSingleArticleSuccess(res.data))
        })
       .catch (err => {
-        dispatch(fetchArticlesFailure(err))
+        dispatch(fetchSingleArticleFailure(err))
     })
   }
 }

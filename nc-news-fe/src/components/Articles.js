@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllArticles } from '../actions/articleAction'
+import { Link } from 'react-router-dom';
+import { fetchAllArticles } from '../actions/articleAction';
+
   
 class Articles extends Component {
   constructor(props) {
@@ -27,7 +29,8 @@ render() {
                         <div key={i} className="article">
                             <ul>
                                 <li> <span>Article ID:</span> {article._id}</li>
-                                <li> <span>Article Title:</span> {article.title}</li>
+                                <li> <span>Article Title:</span>
+                                        <Link to={`/Articles/${article._id}`}> {article.title} </Link> </li>
                                 <li> <span>Created By: </span>{article.created_by}</li>
                                 <li> <span>Category: </span>{article.belongs_to}</li>
                                 <br />
@@ -50,11 +53,11 @@ return {
 };
 }
 function mapDispatchToProps(dispatch) {
-return {
+    return {
     fetchAllArticles: (data) => {
         dispatch(fetchAllArticles());
     }
-};
+    };
 }
 
               
