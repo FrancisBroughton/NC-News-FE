@@ -9,11 +9,12 @@ class SingleArticle extends Component {
   }
 
 componentDidMount() {
-  this.props.fetchSingleArticle()
+  this.props.fetchSingleArticle(this.props.match.params.articles_id)
 } 
 
 render() {
   return (
+    
     <div className="body"> 
     <h1>{this.props.articles.title}</h1>
       <p> <br/> 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as types from '../types';
-import { FETCH_SINGLE_ARTICLE_FAILURE } from '../types';
+
 
 export const fetchSingleArticleRequest = () => ({
   type: types.FETCH_SINGLE_ARTICLE_REQUEST
