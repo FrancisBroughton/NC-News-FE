@@ -20,7 +20,6 @@ class App extends React.Component {
             <ul>
             <ul><Link to='/Homepage'> Homepage </Link></ul> 
             <ul><Link to='/Articles'> Articles </Link></ul> 
-            
             <ul><Link to='/Topics'> Topics </Link> </ul>
             </ul>
             </nav>
