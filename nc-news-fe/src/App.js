@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Articles from './components/Articles';
 import Topics from './components/Topics';
-import Homepage from './components/Homepage';
+import Homepage from './components/Homepage'; // top 10 articles
+import Articles from './components/Articles'; // all articles
+import SingleArticle from './components/SingleArticle'; // 1 article - comments to be inc
 import {
    BrowserRouter,
    Route,
@@ -19,6 +20,7 @@ class App extends React.Component {
             <ul>
             <ul><Link to='/Homepage'> Homepage </Link></ul> 
             <ul><Link to='/Articles'> Articles </Link></ul> 
+            
             <ul><Link to='/Topics'> Topics </Link> </ul>
             </ul>
             </nav>
@@ -28,6 +30,7 @@ class App extends React.Component {
             <Switch>
               <Route path='/Homepage' component={Homepage} />
               <Route path='/Articles' component={Articles} />
+              <Route path='//Articles/:articles_id' component={SingleArticle} />
               <Route path='/Topics' component={Topics} />
             </Switch>
         </div> 
