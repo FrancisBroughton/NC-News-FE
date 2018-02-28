@@ -11,6 +11,7 @@ class TopicPage extends Component {
   render () {
     return (
       <h2>TopicPage for {this.props.match.params.topic}</h2>
+      
     )
   }
 }

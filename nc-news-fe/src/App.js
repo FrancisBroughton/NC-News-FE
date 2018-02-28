@@ -22,7 +22,6 @@ class App extends React.Component {
                 <li><Link to='/Topics'> Topics </Link> </li>
               </ul>
             </nav>
-  
             <Switch>
               <Route exact path='/' component={Homepage} />
               <Route path='/articles/:articles_id' component={SingleArticle} />

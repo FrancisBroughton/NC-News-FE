@@ -6,6 +6,7 @@
 
  import ArticleList from './ArticleList';
 
+
  
  class Homepage extends Component {
      constructor(props) {
@@ -24,7 +25,7 @@
                 {
                     loading 
                         ? <p>Loading...</p> 
-                        : <ArticleList articles={articles} />
+                        : <ArticleList  articles={articles} />
                 }
             </div>
         );

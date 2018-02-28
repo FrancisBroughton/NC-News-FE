@@ -8,7 +8,8 @@ const ArticleList = ({articles}) => {
     <div>
       {articles.map(article => {
         return (
-          <ArticleListItem key={article._id} {...article} />
+          <ArticleListItem key={article._id}{...article} />
+      
         )
       })}
     </div>
