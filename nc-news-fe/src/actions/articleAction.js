@@ -17,13 +17,14 @@ export const fetchAllArticlesFailure = (error) => ({
 
 export function fetchAllArticles(data){
   return function (dispatch){
-      axios.get('https://northcoders-news-api.herokuapp.com/api/articles')
-      .then(res => {
-          dispatch(fetchAllArticlesSuccess(res.data.articles))
-      })
-      .catch (err => {
-          dispatch(fetchAllArticlesFailure(err))
-      })
+      dispatch(fetchAllArticlesRequest())
+      return axios.get('https://northcoders-news-api.herokuapp.com/api/articles')
+        .then(res => {
+            dispatch(fetchAllArticlesSuccess(res.data.articles))
+        })
+        .catch (err => {
+            dispatch(fetchAllArticlesFailure(err))
+        })
   }
 }
 

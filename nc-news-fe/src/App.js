@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Topics from './components/Topics';
+import TopicPage from './components/TopicPage';
 import Homepage from './components/Homepage'; // top 10 articles
 import Articles from './components/Articles'; // all articles
 import SingleArticle from './components/SingleArticle'; // 1 article - comments to be inc
@@ -17,20 +17,16 @@ class App extends React.Component {
         <BrowserRouter>
           <div className="main-container row">
             <nav className="navbar row">
-            <ul>
-            <ul><Link to='/Homepage'> Homepage </Link></ul> 
-            <ul><Link to='/Articles'> Articles </Link></ul> 
-            <ul><Link to='/Topics'> Topics </Link> </ul>
-            </ul>
+              <ul>
+                <li><Link to='/'> Homepage </Link></li> 
+                <li><Link to='/Topics'> Topics </Link> </li>
+              </ul>
             </nav>
   
-
-  
             <Switch>
-              <Route path='/Homepage' component={Homepage} />
-              <Route path='/Articles' component={Articles} />
-              <Route path='/Articles/:articles_id' component={SingleArticle} />
-              <Route path='/Topics' component={Topics} />
+              <Route exact path='/' component={Homepage} />
+              <Route path='/articles/:articles_id' component={SingleArticle} />
+              <Route path='/topics/:topic' component={TopicPage} />
             </Switch>
         </div> 
         </BrowserRouter>

@@ -1,7 +1,10 @@
 
  import React, { Component } from 'react';
+ import {Link} from 'react-router-dom'
  import { connect } from 'react-redux';
  import { fetchAllArticles } from '../actions/articleAction';
+
+ import ArticleList from './ArticleList';
 
  
  class Homepage extends Component {
@@ -14,33 +17,15 @@
      }
  
      render() {
+        const {articles, loading, error} = this.props;
          return (
-             <div className="body">
- 
-             <div className="title">
-            
-                 
-                 <h1>Latest Articles</h1>
-              
-               
-             </div>
- 
-                 {this.props.articles.map((article, i) => {
-                     if (i < 10) {
-                         return (
-                             <div key={i} className="article">
-                                 <ul>
-                                     <li> <span>Article ID:</span> {article._id}</li>
-                                     <li> <span>Article Title:</span> {article.title}</li>
-                                    <li> <span>Created By: </span>{article.created_by}</li> 
-                                    <li> <span>Category: </span>{article.belongs_to}</li>
-                                    <br />
-                                    <li> {article.body}</li>
-                                </ul>
-                            </div>
-                        )
-                    }
-                })}
+            <div id="HomePage">
+                <h1>Latest Articles</h1>
+                {
+                    loading 
+                        ? <p>Loading...</p> 
+                        : <ArticleList articles={articles} />
+                }
             </div>
         );
     }

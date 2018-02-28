@@ -11,14 +11,14 @@ export default (prevState = initialState, action) => {
 
     case types.FETCH_ALL_ARTICLES_REQUEST:
       return Object.assign({}, prevState, {
-        loading: !prevState.loading,
+        loading: true,
         error: null,
         payload: [],
     });
   
     case types.FETCH_ALL_ARTICLES_SUCCESS:
       return Object.assign({}, prevState, {
-        loading: !prevState.loading,
+        loading: false,
         error: null,
         payload: action.payload
     });
