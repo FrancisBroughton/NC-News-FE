@@ -7,12 +7,14 @@ class SingleArticle extends Component {
   constructor(props) {
     super(props)
   }
+ 
 
   componentDidMount() {
     this.props.fetchSingleArticle(this.props.match.params.articles_id)
   } 
 
   render() {
+    const article = this.props.article // does it need this??
     return (
       <div className="body"> 
         <h1> { this.props.articles.title } </h1>
@@ -21,6 +23,7 @@ class SingleArticle extends Component {
           {this.props.articles.body} </p>
     
         <ul>
+          {console.log(this.props.articles.created_by)}
           <li>Author {this.props.articles.created_by} </li>
           <li>Votes {this.props.articles.votes} </li>
         </ul>

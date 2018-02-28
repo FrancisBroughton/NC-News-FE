@@ -19,7 +19,8 @@ export const fetchSingleArticleFailure = (error) => ({
 
 export function fetchSingleArticle(id){
   return function (dispatch){
-      axios.get(`https://northcoders-news-api.herokuapp.com/api/articles/${id}`)
+    dispatch(fetchSingleArticleRequest())
+      return axios.get(`https://northcoders-news-api.herokuapp.com/api/articles/${id}`)
       .then(res => {
           dispatch(fetchSingleArticleSuccess(res.data))
        })
